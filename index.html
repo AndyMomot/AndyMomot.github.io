@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrii Momot</title>
+<meta name="description" content="Senior iOS engineer. Swift, SwiftUI, Kotlin Multiplatform. Fleet, logistics and mobility products shipped end to end, from architecture to the App Store.">
+<meta property="og:title" content="Andrii Momot — Senior iOS engineer">
+<meta property="og:description" content="Swift, SwiftUI, Kotlin Multiplatform. 43 apps live on the App Store from one codebase; an FMCSA-certified ELD system.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="fonts.css">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #000000;
+    --text: #262626;
+    --muted: #6b6b6b;
+    --rule: #e4e4e4;
+    --tile: #f2f2f2;
+    --measure: 640px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+    font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 24px;
+  }
+  .wrap { max-width: var(--measure); margin: 0 auto; padding: 96px 0 112px; }
+
+  a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: #b5b5b5; }
+  a:hover { text-decoration-color: var(--ink); }
+  a:focus-visible, .tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+
+  /* ---------- header ---------- */
+  .name { font-size: 40px; font-weight: 700; letter-spacing: -1.2px; line-height: 1.05; color: var(--ink); }
+  .role { margin-top: 10px; font-size: 17px; color: var(--muted); }
+  .intro { margin-top: 26px; font-size: 18px; line-height: 1.55; color: var(--ink); max-width: 36ch; }
+  .intro + .intro { margin-top: 12px; color: var(--text); font-size: 17px; }
+  .contacts { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 15px; }
+
+  /* ---------- icon wall ---------- */
+  .wall { margin-top: 56px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+    gap: 10px;
+  }
+  .tile { display: block; text-decoration: none; position: relative; }
+  .tile img {
+    width: 100%; aspect-ratio: 1 / 1; display: block;
+    border-radius: 22.5%; background: var(--tile);
+  }
+  .tile span { display: none; }
+  .tile.noimg img { display: none; }
+  .tile.noimg span {
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    aspect-ratio: 1 / 1; border-radius: 22.5%; background: var(--tile);
+    font-size: 9px; line-height: 1.15; padding: 4px; color: var(--muted); overflow: hidden;
+  }
+  .wall-cap { margin-top: 18px; font-size: 15px; color: var(--muted); max-width: 52ch; }
+  .wall-cap strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- sections ---------- */
+  .sec {
+    margin: 72px 0 8px; font-size: 15px; font-weight: 500; color: var(--ink);
+    letter-spacing: 0;
+  }
+  .sec .br { color: #b5b5b5; font-weight: 400; }
+
+  .entry { padding: 22px 0 24px; border-top: 1px solid var(--rule); }
+  .entry-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+  .entry h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; color: var(--ink); line-height: 1.25; }
+  .entry h3 a { text-decoration-color: #b5b5b5; }
+  .badge {
+    font-style: normal; font-size: 12px; font-weight: 500; color: var(--muted);
+    border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px;
+    vertical-align: 2px; margin-left: 6px;
+  }
+  .when { font-size: 14px; color: var(--muted); white-space: nowrap; }
+  .entry p { margin-top: 10px; font-size: 15.5px; }
+  .entry p.lead { margin-top: 12px; color: var(--ink); }
+  .entry p.tech { margin-top: 12px; font-size: 14px; color: var(--muted); }
+  .entry p.tech + p.tech { margin-top: 4px; }
+  .plinks { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+
+  /* ---------- skills ---------- */
+  .skills { border-top: 1px solid var(--rule); }
+  .skills dt, .skills dd { font-size: 15.5px; }
+  .skills dt { padding-top: 14px; color: var(--muted); font-size: 14px; }
+  .skills dd { padding: 2px 0 14px; border-bottom: 1px solid var(--rule); color: var(--ink); }
+
+  /* ---------- footer ---------- */
+  .foot { margin-top: 88px; font-size: 15px; color: var(--muted); }
+  .foot p + p { margin-top: 8px; }
+  .foot .contacts { margin-top: 10px; }
+
+  @media (max-width: 560px) {
+    body { padding: 0 20px; }
+    .wrap { padding: 56px 0 80px; }
+    .name { font-size: 32px; letter-spacing: -0.9px; }
+    .intro { font-size: 17px; }
+    .intro + .intro { font-size: 16px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 8px; }
+    .sec { margin-top: 56px; }
+    .entry h3 { font-size: 18px; }
+    .when { white-space: normal; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1 class="name">Andrii Momot</h1>
+    <p class="role">Senior iOS engineer, Bucharest, working remotely</p>
+    <p class="intro">I ship iOS products end to end, from architecture to the App Store, across logistics, fleet and mobility.</p>
+    <p class="intro">Most of my work lives where the data is unreliable and the stakes are regulatory.</p>
+    <nav class="contacts" aria-label="Contact">
+      <a href="mailto:andrii.momot.ua@gmail.com">andrii.momot.ua@gmail.com</a>
+      <a href="https://linkedin.com/in/andriimomot" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/AndyMomot" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://wa.me/380678510517" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+
+  <div id="wall"></div>
+
+  <main id="content"></main>
+
+  <footer class="foot">
+    <p>Open to senior iOS roles, remote, as an employee or a contractor.</p>
+    <nav class="contacts" aria-label="Contact">
+      <a href="mailto:andrii.momot.ua@gmail.com">andrii.momot.ua@gmail.com</a>
+      <a href="https://linkedin.com/in/andriimomot" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/380678510517" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </footer>
+
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
