@@ -102,6 +102,17 @@ const DATA = {
       ]
     },
     {
+      name: "FleetSoft.Doc",
+      org: "Fleet Soft",
+      period: "2024 – 2026",
+      summary: "Document flow for sole proprietors: contracts signed end to end inside the app, with a digital signature and OTP confirmation, plus registration and subscription payments.",
+      bullets: [
+        "The only non-driver product of the four, and the one with the strictest correctness requirements — a signature that does not bind is worse than one that fails outright.",
+        "SwiftUI throughout, Keychain-backed auth, embedded video for onboarding, Firebase."
+      ],
+      tech: ["Swift", "SwiftUI", "Keychain", "Firebase", "StoreKit"]
+    },
+    {
       name: "IronFleet",
       org: "Fleet Soft",
       period: "2024 – 2026",
